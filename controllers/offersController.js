@@ -1,6 +1,6 @@
 var offer = require('../schemas/offer');
 
-exports.getoffers = {
+exports.getOffers = {
   auth: {
     mode:'required',
     strategy:'session',
@@ -12,21 +12,21 @@ exports.getoffers = {
   }
 }
 
-exports.createoffer = {
+exports.createOffer = {
   auth: {
     mode:'required',
     strategy:'session',
     scope: ['admin']
   },
   handler: function(request, reply){
-    var newoffer = new offer({
+    var newOffer = new offer({
       titulo: request.payload.titulo,
       descripcion: request.payload.descripcion,
       cargo : request.payload.cargo,
       informacion : request.payload.informacion,
       salario : request.payload.salario
     });
-    newoffer.save();
+    newOffer.save();
     console.log('offer saved');
     return reply('ok');
   }

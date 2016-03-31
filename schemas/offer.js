@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var offerSchema = new mongoose.Schema({
+var OfferSchema = new mongoose.Schema({
   titulo : String,
   descripcion : String,
   cargo : String,
@@ -8,4 +8,4 @@ var offerSchema = new mongoose.Schema({
   salario : String
 });
 
-module.exports = mongoose.model('offer', offerSchema);
+module.exports = mongoose.model('Offer', OfferSchema);
